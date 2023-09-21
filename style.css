@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+:root {
+  --crna: #202e3b;
+  --plava: #2b7db8;
+  --shadow: 1px 1px 3px #333;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* Header stilizacija */
+
+header {
+  background-color: rgba(40, 51, 82, 0.8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 2.5rem;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  font-size: 2rem;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: var(--shadow);
+  transition: color 0.3s linear;
+}
+
+nav a:hover {
+  color: var(--plava);
+}
+
+.fa-bars {
+  color: #fff;
+  font-size: 3rem;
+  cursor: pointer;
+  display: none;
+}
+
+/* Main stilizacija */
+
+main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-shadow: var(--shadow);
+  position: relative;
+}
+
+h1 {
+  color: var(--plava);
+  font-size: 7rem;
+}
+
+h2 {
+  font-size: 5rem;
+  color: #fff;
+}
+
+section > a {
+  background-color: var(--plava);
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.6rem;
+  padding: 1rem;
+  display: inline-block;
+  margin: 1rem 0 2rem;
+  border-radius: 15px;
+  transition: all 0.3s linear;
+}
+
+section > a:hover {
+  background-color: var(--crna);
+  letter-spacing: 1px;
+}
+
+.icons a {
+  color: var(--plava);
+  background-color: #fff;
+  font-size: 1.6rem;
+  box-shadow: var(--shadow);
+  width: 4rem;
+  height: 4rem;
+  line-height: 4rem;
+  border-radius: 50%;
+  margin: 0 0.5rem;
+}
+
+video {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media all and (max-width: 600px) {
+  html {
+    font-size: 50%;
+  }
+
+  .fa-bars {
+    display: block;
+    z-index: 2;
+  }
+
+  nav {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: -100%;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  nav ul {
+    background-color: var(--crna);
+    height: 100%;
+    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-toggle {
+    left: 0;
+  }
+}
